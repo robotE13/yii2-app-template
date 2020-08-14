@@ -55,7 +55,11 @@ the installed application. You only need to do these once for all.
     
         'dsn' => 'mysql:host=db;dbname=yii2webapp',
         'username' => 'yii2webapp',
-        'password' => 'secret',
+        'password' => 'secret'
+
+6. Adjust the components['db'] configuration in `common/config/test-local.php` accordingly.
+    
+        'dsn' => 'mysql:host=db;dbname=yii2webapp_test',
 
 > Docker networking creates a DNS entry for the host `mysql` available from your `backend` and `frontend` containers.
 
