@@ -35,9 +35,12 @@ phpunit.phar
 /.vagrant
 
 # ignore generated files
-/frontend/web/index.php
-/frontend/web/index-test.php
-/frontend/web/robots.txt
-/backend/web/index.php
-/backend/web/index-test.php
-/backend/web/robots.txt
+/frontoffice/web/index.php
+/frontoffice/web/index-test.php
+/frontoffice/web/robots.txt
+/backoffice/web/index.php
+/backoffice/web/index-test.php
+/backoffice/web/robots.txt
+
+# Docker-compose env file
+/.env
