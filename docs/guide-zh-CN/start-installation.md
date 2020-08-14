@@ -12,7 +12,7 @@
 
 安装Composer后，您可以使用以下命令安装应用程序：
 
-    composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
+    composer create-project --prefer-dist robote13/yii2-webapp-template yii-application
 
 个命令将高级应用程序安装在名为 `yii-application` 的目录中。 如果需要，您可以选择不同的目录名称。 
 

@@ -12,7 +12,7 @@ do guia definitivo para Yii 2.0 para instala-lo.
 
 Com o Composer instalado, você pode então instalar o template de projetos usando os seguintes comandos:
 
-    composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
+    composer create-project --prefer-dist robote13/yii2-webapp-template yii-application
     
 O comando instala o template avançado de projetos no diretório `yii-application`.
 Você pode escolher um diretório diferente se desejar.

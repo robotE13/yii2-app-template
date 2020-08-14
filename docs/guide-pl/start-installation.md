@@ -12,7 +12,7 @@ Jeśli nie posiadasz zainstalowanego [Composera](http://getcomposer.org/), zapoz
 
 Po zainstalowaniu Composera możesz zainstalować aplikację korzystając z poniższych komend:
 
-    composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
+    composer create-project --prefer-dist robote13/yii2-webapp-template yii-application
 
 Komenda instaluje zaawansowaną aplikację w folderze o nazwie `yii-application`. Możesz, rzecz jasna, wybrać 
 dowolną inną nazwę.

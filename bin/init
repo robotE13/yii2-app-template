@@ -1,21 +1,7 @@
 #!/bin/bash
 
-if [ -z "$1" ]
-then
-  echo "Please provide project name to create network for docker-compose services";
-  echo "e.g. my-web-app"
-  exit;
-fi
-
-if [ -z "$2" ]
-then
-  environment="Development";
-else
-  environment=$2;
-fi
-
 $(cp .env-dist .env)
 $(sed -i -e "s/\$UID/$(exec id -u)/; s/\$GID/$(exec id -g)/; s/\$USERNAME/$(exec id -un)/" .env)
-$(sed -i -e "s/\$PROJECT_NAME/$1/" .env)
+
 echo -e "# Shell script files will be always have LF line endings on checkout.\n*.sh text eol=lf" > .gitattributes
-docker-compose run --rm --no-deps php composer init-app -- --env=$environment
+docker-compose run --rm --no-deps php composer init-app -- $@

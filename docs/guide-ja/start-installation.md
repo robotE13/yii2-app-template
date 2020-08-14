@@ -12,7 +12,7 @@
 
 Composer がインストールされていれば、次のコマンドを使ってアプリケーションをインストールすることが出来ます。
 
-    composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
+    composer create-project --prefer-dist robote13/yii2-webapp-template yii-application
 
 このコマンドは `yii-application` という名前のディレクトリにアドバンスト・アプリケーションをインストールします。
 望むなら別のディレクトリ名を選ぶことも出来ます。
