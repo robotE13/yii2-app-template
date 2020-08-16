@@ -37,10 +37,12 @@ services:
           - ./:/data
     db:
         image: mariadb:latest
+        env_file:
+          - .env
         volumes:
           - db_data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: "password"
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         ports:

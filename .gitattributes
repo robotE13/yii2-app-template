@@ -4,3 +4,6 @@
 /.scrutinizer.yml   export-ignore
 /.travis.yml        export-ignore
 /docs               export-ignore
+
+# Shell script files will be always have LF line endings on checkout.
+*.sh text eol=lf

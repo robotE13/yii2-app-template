@@ -46,7 +46,16 @@
         "init-app":[
             "php init < /dev/tty"
         ],
+        "build": [
+            "@php yii migrate/up --interactive=0",
+            "@php yii cache/flush cache --interactive=0"
+        ],
+        "build-dev":[
+            "@composer install --prefer-dist",
+            "@build"
+        ],
         "test": [
+            "@php yii_test migrate/up --interactive=0",
             "codecept -v run"
         ]
     }

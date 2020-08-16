@@ -1,21 +1,31 @@
 #!/bin/bash
 
-if [ -z "$1" ]
+db_name="yii2_webapp"
+db_test_name="yii2_webapp_test"
+
+read -n 12 -sp "Plese, specify root MYSQL password: " password
+echo
+read -n 12 -sp "Plese, re-type password: " compare
+echo 
+
+if [ $password != $compare ]
 then
-  echo "Please provide project name to create network for docker-compose services";
-  echo "e.g. my-web-app"
+  echo "Введенный пароль не совпадает с проверочным";
   exit;
 fi
-
-if [ -z "$2" ]
-then
-  environment="Development";
-else
-  environment=$2;
-fi
+echo "Start copy env files"
 
 $(cp .env-dist .env)
 $(sed -i -e "s/\$UID/$(exec id -u)/; s/\$GID/$(exec id -g)/; s/\$USERNAME/$(exec id -un)/" .env)
-$(sed -i -e "s/\$PROJECT_NAME/$1/" .env)
+$(sed -i -e "s/\$MYSQL_ROOT_PASSWORD/$password/" .env)
+
 echo -e "# Shell script files will be always have LF line endings on checkout.\n*.sh text eol=lf" > .gitattributes
-docker-compose run --rm --no-deps php composer init-app -- --env=$environment
+
+docker-compose run --rm --no-deps php composer init-app -- $@
+
+docker-compose up --no-deps -d db \
+    && echo "Creating app database..." \
+    && docker-compose exec db mysql -u root -p$password -e "CREATE DATABASE $db_name DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci" \
+    && echo "Creating test database" \
+    && docker-compose exec db mysql -u root -p$password -e "CREATE DATABASE $db_test_name DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci" \
+    && docker-compose down

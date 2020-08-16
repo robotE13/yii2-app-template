@@ -18,7 +18,6 @@ Getting Started
 
 * [Installation](start-installation.md)
 * [Difference from basic project template](start-comparison.md)
-* [Configuring Composer](start-composer.md)
 * [Running Tests](start-testing.md)
 
 Structure
