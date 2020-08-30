@@ -23,9 +23,10 @@ It uses [asset-packagist](https://asset-packagist.org/) for managing bower and n
 After you install the application, you have to conduct the following steps to initialize
 the installed application. You only need to do these once for all.
 
-1. After the project template is installed to adjust default `.env-dist`and `composer.json` that can be found in the root directory.
+1. After the project template is installed to adjust default `.env-dist`, `package.json` and `composer.json` that can be found in the root directory.
     First we're updating basic information.
     - In `composer.json`: change `name`, `description`, `keywords`, `homepage` and `support`;
+    - In `package.json`: change `name`, `description`, `author`, and `repository`;
     - In `.env-dist`: change `COMPOSE_PROJECT_NAME`, `FRONTOFFICE_HOST`, `BACKOFFICE_HOST` to match your project;
     Second, specify your names for the application and test databases in the `bin/init`file
     - `db_name`
@@ -77,6 +78,14 @@ the installed application. You only need to do these once for all.
     
     ```
     bin/composer build-dev
+    ```
+
+7. Run yarn commands to install NPM dependencies described in package.json file and build frontend assets (js, css, images e.t.c).
+   See the corresponding `webpack.config` file for each theme.
+    
+    ```
+    bin/yarn
+    bin/yarn dev
     ```
     
 Access it in your browser by opening

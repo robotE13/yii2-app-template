@@ -1,0 +1,25 @@
+{
+  "name": "robote13/yii2-webapp-template",
+  "version": "1.0.0",
+  "description": "Yii 2 Advanced Project Template. Frontend",
+  "main": "index.js",
+  "repository": "https://bitbucket.org/akvarelltd/backoffice-web/src/master/",
+  "author": "Evgenii Dudal",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --config ./frontoffice/themes/base/webpack.config.js",
+    "watch": "webpack --config ./frontoffice/themes/base/webpack.config.js --mode development --watch --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.2.2",
+    "mini-css-extract-plugin": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1"
+  }
+}

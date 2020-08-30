@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#docker-compose run --rm -T node-cli "echo pid1 > /dev/null && yarn $*"
+docker-compose run --rm -T node-cli "yarn $*"

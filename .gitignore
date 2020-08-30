@@ -20,8 +20,12 @@ Thumbs.db
 # composer vendor dir
 /vendor
 
-# composer itself is not needed
-composer.phar
+# npm modules dir
+/node_modules
+/yarn-error.log
+
+# Webpack output folders 
+dist
 
 # Mac DS_Store Files
 .DS_Store
@@ -31,9 +35,6 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# vagrant runtime
-/.vagrant
-
 # ignore generated files
 /frontoffice/web/index.php
 /frontoffice/web/index-test.php
@@ -41,6 +42,5 @@ phpunit.phar
 /backoffice/web/index.php
 /backoffice/web/index-test.php
 /backoffice/web/robots.txt
-
 # Docker-compose env file
 /.env

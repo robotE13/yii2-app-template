@@ -9,15 +9,16 @@ use yii\web\AssetBundle;
  */
 class Asset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+
+    public $sourcePath = '@frontoffice/themes/base/dist';
     public $css = [
-        'css/site.css',
+        'css/style.bundle.css',
     ];
     public $js = [
+        'js/bundle.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
     ];
+
 }
