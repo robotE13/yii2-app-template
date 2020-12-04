@@ -1,5 +1,10 @@
 version: '3.5'
 services:
+    #certbot:
+    #    image: certbot/certbot:latest
+    #    volumes:
+    #      - ./.well-known:/var/www/.well-known
+    #      - le_certs:/etc/letsencrypt
     server:
         image: nginx:latest
         ports:
@@ -14,8 +19,8 @@ services:
           - ./docker/nginx/entrypoint.sh/:/usr/local/bin/entrypoint.sh/
           - ./docker/nginx/nginx.conf/:/etc/nginx/nginx.conf/
           - ./:/var/www
-          - ./frontoffice/runtime/nginxlogs:/var/log/nginx
-          - ${SSL_CERTIFICATE_VOLUME}
+          - ./docker/nginx/certs:/etc/nginx/certs/selfsigned
+          #- le_certs:/etc/letsencrypt
         entrypoint: ["/usr/local/bin/entrypoint.sh"]
         command: ["nginx", "-g", "daemon off;"]
     php:
@@ -53,3 +58,4 @@ services:
           - db_data:/var/lib/mysql
 volumes:
     db_data:
+    #le_certs:

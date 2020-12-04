@@ -12,10 +12,10 @@ class Asset extends AssetBundle
 
     public $sourcePath = '@frontoffice/themes/base/dist';
     public $css = [
-        'css/style.bundle.css',
+        'style.bundle.css',
     ];
     public $js = [
-        'js/bundle.js'
+        'bundle.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

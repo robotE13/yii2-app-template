@@ -1,8 +1,3 @@
-# yii console commands
-/yii
-/yii_test
-/yii_test.bat
-
 # phpstorm project files
 .idea
 
@@ -35,12 +30,21 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# ignore generated files
+# Yii console commands
+/yii
+/yii_test
+/yii_test.bat
+
+# Yii local config generated files
 /frontoffice/web/index.php
 /frontoffice/web/index-test.php
 /frontoffice/web/robots.txt
 /backoffice/web/index.php
 /backoffice/web/index-test.php
 /backoffice/web/robots.txt
+
 # Docker-compose env file
 /.env
+
+# LetsEncrypt http challenge location
+.well-known

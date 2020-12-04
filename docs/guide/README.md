@@ -31,6 +31,8 @@ Structure
 Additional Topics
 -----------------
 
+* [Issue of the Let's Encrypt certificate.](lets-encrypt-certificate-issue.md)
 * [Creating links from backend to frontend](topic-link-backend-frontend.md)
 * [Adding more applications](topic-adding-more-apps.md)
 * [Using advanced project template at shared hosting](topic-shared-hosting.md)
+
