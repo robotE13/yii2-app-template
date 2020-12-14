@@ -11,7 +11,7 @@ const config = {
         path.resolve(__dirname, "src/scss/index.scss")
     ],
     output: {
-        filename: "./bundle.js",
+        filename: "bundle.js",
         path: path.resolve(__dirname, "dist")
     },
     devtool: "source-map",
@@ -29,6 +29,16 @@ const config = {
     },
     module: {
         rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
             {
                 test: /\.(sass|scss)$/,
                 //include: path.resolve(__dirname, "src/scss"),
